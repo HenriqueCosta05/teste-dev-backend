@@ -3,20 +3,27 @@ package com.henriquecostadev.costumersapi.models;
 import com.henriquecostadev.costumersapi.enums.Gender;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Document(collection = "Clientes")
-public class Costumer {
+public class Patient {
+
+    @MongoId
     @Id
     private Long id;
 
     @NotBlank(message = "O nome é obrigatório")
-    private String nome;
+    private String name;
 
     @NotBlank(message = "A data de nascimento é obrigatória")
     private Date birthDate;

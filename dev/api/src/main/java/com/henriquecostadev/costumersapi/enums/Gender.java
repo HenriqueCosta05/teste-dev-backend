@@ -2,7 +2,7 @@ package com.henriquecostadev.costumersapi.enums;
 
 public enum Gender {
     Male("Homem"),
-    Female("Mulher"),
+    Female("Mulher");
 
     private String description;
 
